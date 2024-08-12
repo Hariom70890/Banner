@@ -23,7 +23,11 @@ mongoose.connect(process.env.BD_URL, {
   process.exit(1);
 });
 
-app.use('/api/banner', bannerRoutes);
+app.use( '/api/banner', bannerRoutes );
+app.get( '/', (req,res) =>
+{
+  res.send("Your banner with counter server is live")
+})
 
 // Basic error handling middleware
 app.use((err, req, res, next) => {
