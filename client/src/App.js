@@ -14,7 +14,7 @@ function App() {
 
   const fetchBannerData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/banner');
+      const response = await axios.get(`${process.env.REACT_APP_LOCAL_SERVER}/api/banner`);
       setBannerData(response.data);
     } catch (error) {
       console.error('Error fetching banner data:', error);
